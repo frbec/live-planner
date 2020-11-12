@@ -1,3 +1,9 @@
+# Sapper build
+__sapper__
+
+# macOS
+.DS_Store
+
 # Logs
 logs
 *.log
