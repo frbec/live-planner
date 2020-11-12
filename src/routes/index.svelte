@@ -1,5 +1,5 @@
 <script>
-  import FacebookLogin from "./components/svelte-facebook-login";
+  import FacebookLogin from "../components/FacebookLogin.svelte";
 </script>
 
 <style>
