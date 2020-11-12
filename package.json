@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "live-planner",
+  "description": "Live Planner is an app for scheduling live broadcasts on multiple platforms",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
