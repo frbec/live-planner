@@ -1,5 +1,4 @@
 <script>
-  import successkid from "images/successkid.jpg";
   import FacebookLogin from "svelte-facebook-login";
 </script>
 
@@ -55,11 +54,6 @@
   let:onLogin>
   <button on:click={onLogin}>Facebook Login</button>
 </FacebookLogin>
-
-<figure>
-  <img alt="Success Kid" src={successkid} />
-  <figcaption>Have fun with Sapper!</figcaption>
-</figure>
 
 <p>
   <strong>
