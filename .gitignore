@@ -1,5 +1,6 @@
-# Sapper build
+# App
 __sapper__
+.env
 
 # macOS
 .DS_Store

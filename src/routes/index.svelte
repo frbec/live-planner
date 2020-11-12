@@ -1,5 +1,12 @@
 <script>
   import FacebookLogin from "../components/FacebookLogin.svelte";
+  let FBredirectURI;
+
+  if (process.env.NODE_ENV == "development") {
+    FBredirectURI = "http://localhost:3000/";
+  } else {
+    FBredirectURI = "https://live-planner.netlify.app/";
+  }
 </script>
 
 <style>
@@ -35,7 +42,7 @@
 
 <FacebookLogin
   clientId="400698430951063"
-  redirectUri="http://localhost:3000/"
+  redirectUri={FBredirectURI}
   on:success={params => console.log(params)}
   on:error={error => console.log(error)}
   let:onLogin>
