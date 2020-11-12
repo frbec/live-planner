@@ -1,10 +1,9 @@
 <script>
-  import FacebookLogin from "svelte-facebook-login";
+  import FacebookLogin from "./components/svelte-facebook-login";
 </script>
 
 <style>
   h1,
-  figure,
   p {
     text-align: center;
     margin: 0 auto;
@@ -36,9 +35,8 @@
 
 <FacebookLogin
   clientId="400698430951063"
-  state="1"
-  redirectUri="https://www.facebook.com/connect/login_success.html"
-  scope="publish_video pages_read_engagement"
+  redirectUri="http://localhost:3000"
+  responseType="token"
   on:success={params => console.log(params)}
   on:error={error => console.log(error)}
   let:onLogin>
