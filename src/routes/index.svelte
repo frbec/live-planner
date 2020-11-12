@@ -35,7 +35,7 @@
 
 <FacebookLogin
   clientId="400698430951063"
-  redirectUri="https://live-planner.netlify.app"
+  redirectUri="https://live-planner.netlify.app/"
   responseType="token"
   on:success={params => console.log(params)}
   on:error={error => console.log(error)}
