@@ -15,7 +15,7 @@
     FBredirectURI = "http://localhost:3000/";
   } else {
     FBredirectURI =
-      "https://live-planner.netlify.app/.netlify/functions/fb_login.js";
+      "https://live-planner.netlify.app/.netlify/functions/fb_login";
   }
   // Start svelte-formly
   import { onMount } from "svelte";
