@@ -20,7 +20,7 @@ exports.handler = async function(event) {
       .then(response => response.json())
       .then(data => ({
         statusCode: 200,
-        body: { access_token: data.access_token, id: data.id }
+        body: data
       }))
       .catch(error => ({ statusCode: 422, body: String(error)})))
     .catch(error => ({ statusCode: 422, body: String(error) }));
