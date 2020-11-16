@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
 // environment variables
 const { CLIENT_SECRET, CLIENT_ID } = process.env;
