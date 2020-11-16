@@ -1,9 +1,11 @@
+import fetch from "node-fetch";
+
+// environment variables
+const { CLIENT_SECRET, CLIENT_ID } = process.env;
+const API_ENDPOINT = "https://graph.facebook.com/v9.0/oauth/access_token"
+const REDIRECT_URI = "https://live-planner.netlify.app/.netlify/functions/fb_login"
+
 exports.handler = async function(event) {
-  import fetch from "node-fetch";
-  // environment variables
-  const { CLIENT_SECRET, CLIENT_ID } = process.env;
-  const API_ENDPOINT = "https://graph.facebook.com/v9.0/oauth/access_token"
-  const REDIRECT_URI = "https://live-planner.netlify.app/.netlify/functions/fb_login"
 
   // Query the user access token
   const code = event.queryStringParameters.code

@@ -14,7 +14,8 @@
   if (process.env.NODE_ENV == "development") {
     FBredirectURI = "http://localhost:3000/";
   } else {
-    FBredirectURI = "https://live-planner.netlify.app/";
+    FBredirectURI =
+      "https://live-planner.netlify.app/.netlify/functions/fb_login.js";
   }
   // Start svelte-formly
   import { onMount } from "svelte";
