@@ -4,7 +4,7 @@
   export let clientId;
   export let state;
   export let redirectUri;
-  export let responseType;
+  export let responseType = "code";
   export let scope;
 
   const dispatch = createEventDispatcher();
@@ -62,13 +62,13 @@
     let urlParams = `client_id=${clientId}&state=${state}&redirect_uri=${redirectUri}`;
 
     if (responseType) {
-      urlParams += `response_type=${responseType}`;
+      urlParams += `&response_type=${responseType}`;
     }
 
     if (scope) {
-      urlParams += `scope=${scope}`;
+      urlParams += `&scope=${scope}`;
     }
-
+    console.log(urlParams);
     popupWindow = window.open(
       `${urlFacebook}?${urlParams}`,
       "facebook-oauth",

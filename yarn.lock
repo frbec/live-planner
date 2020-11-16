@@ -1019,6 +1019,11 @@ clean-css@^4.2.1:
   dependencies:
     source-map "~0.6.0"
 
+clsx@^1.0.4:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
@@ -1663,6 +1668,13 @@ supports-color@^7.0.0:
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
+
+svelte-formly@^0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/svelte-formly/-/svelte-formly-0.0.18.tgz#acf38bb9db2114cee3144e3b04b05829fe63ff3a"
+  integrity sha512-EQXsF0omCYr9idkyaTRa6dtQ5OWYMjgEGhMqy/eoW5fjDbUa5Rz0uhpMF7afdl1ATPem9kv50rnaw79dyTe1tA==
+  dependencies:
+    clsx "^1.0.4"
 
 svelte@^3.17.3:
   version "3.29.7"

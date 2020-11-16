@@ -1,3 +1,12 @@
+<script context="module">
+  export async function preload({ params, query }) {
+    const module = await import("svelte-formly");
+    const Field = module.Field;
+    const valuesForm = module.valuesForm;
+    return { Field, valuesForm };
+  }
+</script>
+
 <script>
   import FacebookLogin from "../components/FacebookLogin.svelte";
   let FBredirectURI;
@@ -7,24 +16,52 @@
   } else {
     FBredirectURI = "https://live-planner.netlify.app/";
   }
+  // Start svelte-formly
+  import { onMount } from "svelte";
+  import { get } from "svelte/store";
+
+  export let Field;
+  export let valuesForm;
+
+  const fields = [
+    {
+      type: "text",
+      name: "title",
+      id: "title",
+      label: "Title",
+      validation: ["required"],
+      messages: {
+        required: "Title is required!"
+      }
+    },
+    {
+      type: "text",
+      name: "description",
+      id: "description",
+      label: "Description",
+      validation: ["required"],
+      messages: {
+        required: "Description is required!"
+      }
+    }
+  ];
+
+  function onSubmit() {
+    const data = get(valuesForm);
+    if (data.isValidForm) {
+      const values = data.values;
+      console.log("values", values);
+    }
+  }
+  //end svelte-formly
 </script>
 
 <style>
-  h1,
-  p {
-    text-align: center;
-    margin: 0 auto;
-  }
-
   h1 {
     font-size: 2.8em;
     text-transform: uppercase;
     font-weight: 700;
     margin: 0 0 0.5em 0;
-  }
-
-  p {
-    margin: 1em auto;
   }
 
   @media (min-width: 480px) {
@@ -35,22 +72,23 @@
 </style>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Live Planner</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<h1>Live Planner</h1>
 
 <FacebookLogin
   clientId="400698430951063"
+  state="1"
   redirectUri={FBredirectURI}
+  scope="pages_manage_posts pages_read_engagement"
   on:success={params => console.log(params)}
   on:error={error => console.log(error)}
   let:onLogin>
   <button on:click={onLogin}>Facebook Login</button>
 </FacebookLogin>
 
-<p>
-  <strong>
-    Try editing this file (src/routes/index.svelte) to test live reloading.
-  </strong>
-</p>
+<form on:submit|preventDefault={onSubmit}>
+  <svelte:component this={Field} {fields} />
+  <button type="submit">Submit</button>
+</form>
