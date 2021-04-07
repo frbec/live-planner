@@ -1,6 +1,8 @@
 # App
 __sapper__
 .env
+netlify.toml
+launch.json
 
 # macOS
 .DS_Store
